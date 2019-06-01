@@ -74,7 +74,13 @@ def clustering_Kshape(tsdata, n_clusters, random_state, n_init, max_iter=100):
 	# stack_data = TimeSeriesScalerMeanVariance(mu=0.0, std=1.0).fit_transform(stack_data)
 
 	# Instantiate of KShape Class
-	ks = KShape(n_clusters=n_clusters, n_init=n_init, verbose=True, random_state=random_state, max_iter=max_iter)
+	ks = KShape(
+		n_clusters=n_clusters,
+		n_init=n_init,
+		verbose=True,
+		random_state=random_state,
+		max_iter=max_iter
+	)
 	y_pred = ks.fit_predict(tsdata)
 
 	return y_pred
@@ -83,7 +89,14 @@ def clustering_Kshape(tsdata, n_clusters, random_state, n_init, max_iter=100):
 def clustering_TimeSeriesKMeans(tsdata, n_clusters, random_state, n_init, metric="softdtw", metric_params={"gamma_sdtw": 0.01}):
 	np.random.seed(random_state)
 	# Instantiate of TimeSeriesKMeans Class
-	dtw_km = TimeSeriesKMeans(n_clusters=n_clusters, n_init=n_init, metric=metric, metric_params=metric_params, verbose=True, random_state=random_state)
+	dtw_km = TimeSeriesKMeans(
+		n_clusters=n_clusters,
+		n_init=n_init,
+		metric=metric,
+		metric_params=metric_params,
+		verbose=True,
+		random_state=random_state
+	)
 	y_pred = dtw_km.fit_predict(tsdata)
 
 	return y_pred
