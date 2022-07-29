@@ -13,3 +13,7 @@
         - GAP method
         - Silhouette method
         - Elbow method
+
+# directory
+- `data/`: sample dataset for clustering waveform
+- `notebook/`: jupyter notebook implementing tslearn sample code
